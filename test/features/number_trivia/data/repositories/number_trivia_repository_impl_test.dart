@@ -13,6 +13,7 @@ import 'package:mockito/annotations.dart';
 
 import 'number_trivia_repository_impl_test.mocks.dart';
 
+// flutter pub run build_runner build
 @GenerateMocks(
     [NumberTriviaRemoteDataSource, NumberTriviaLocalDataSource, NetworkInfo])
 void main() {
