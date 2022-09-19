@@ -17,7 +17,7 @@ final sl = GetIt.instance;
 Future<void> init() async {
   initFeatures();
   initCore();
-  initExternal();
+  await initExternal();
 }
 
 void initFeatures() {
@@ -62,7 +62,7 @@ void initCore() {
   sl.registerLazySingleton<NetworkInfo>(() => NetworkInfoImpl(sl()));
 }
 
-void initExternal() async {
+Future<void> initExternal() async {
   final sharedPreferences = await SharedPreferences.getInstance();
   sl.registerLazySingleton(() => sharedPreferences);
   sl.registerLazySingleton(() => http.Client());
